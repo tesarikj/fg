@@ -9,7 +9,7 @@ Scene::Scene(QMenu *itemMenu, QObject *parent): QGraphicsScene(parent)
 {
     myItemMenu = itemMenu;
     myMode = MoveItem;
-    myItemType = Item::Basic;
+    //myItemType = Item::Basic;
     line = 0;
     textItem = 0;
 }
@@ -30,10 +30,10 @@ void Scene::setMode(Mode mode)
     myMode = mode;
 }
 
-void Scene::setItemType(Item::ItemType type)
+/*void Scene::setItemType(Item::ItemType type)
 {
     myItemType = type;
-}
+}*/
 void Scene::editorLostFocus(TextItem *item)
 {
     QTextCursor cursor = item->textCursor();

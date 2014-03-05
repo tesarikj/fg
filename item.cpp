@@ -1,7 +1,7 @@
 #include <QtGui>
 
 #include "item.h"
-#include "line.h"
+//#include "line.h"
 
 Item::Item(ItemType Type, QMenu *contextMenu, QGraphicsItem *parent, QGraphicsScene *scene)
     : QGraphicsPolygonItem(parent, scene)

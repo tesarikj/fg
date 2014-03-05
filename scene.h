@@ -2,7 +2,7 @@
 #define SCENE_H
 
 #include <QGraphicsScene>
-#include "item.h"
+//#include "item.h"
 #include "libstructure.h"
 #include "textitem.h"
 
@@ -27,7 +27,7 @@
 
  public slots:
      void setMode(Mode mode);
-     void setItemType(Item::ItemType type);
+     //void setItemType(Item::ItemType type);
      void editorLostFocus(TextItem *item);
 
  signals:
@@ -44,7 +44,7 @@
      bool isItemChange(int type);
 
      QPointF location;
-     Item::ItemType myItemType;
+     //Item::ItemType myItemType;
      QMenu *myItemMenu;
      Mode myMode;
      bool leftButtonDown;

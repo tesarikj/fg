@@ -9,9 +9,7 @@ TEMPLATE = app
 SOURCES += main.cpp\
         mainwindow.cpp \
 	scene.cpp \
-	item.cpp \
 	textitem.cpp \
-	line.cpp \
 	gridlines.cpp \
     libstructure.cpp \
     port.cpp \
@@ -20,9 +18,7 @@ SOURCES += main.cpp\
 
 HEADERS  += mainwindow.h \
 	scene.h \
-	item.h \
 	textitem.h \
-	line.h \
 	gridlines.h \
     libstructure.h \
     port.h \
