@@ -6,7 +6,6 @@
 #include <QLayout>
 #include <QResizeEvent>
 
-#include "item.h"
 #include "gridlines.h"
 #include "libstructure.h"
 
@@ -54,8 +53,8 @@ private slots:
     void itemSelected(QGraphicsItem *item);             //je vybrán objekt
     void moveItem();                                    //přesun objektu
     void moveItemContext();                             //přesun objektu - v kontextovém menu
-    void insertLine();
-    void insertLineContext();
+   // void insertLine();
+    //void insertLineContext();
     void sceneScaleChanged(const QString &scale);       //lupa
 
     void insertText();                                  //akce pro vložení textu

@@ -2,7 +2,7 @@
 #define CONNECTION_H
 
 #include <QGraphicsPathItem>
-//jkjk
+
 class Port;
 class QPainter;
 

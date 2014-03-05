@@ -160,7 +160,7 @@ void MainWindow::createActions()            //propojení signálů a slotů pro 
     connect(ui->actionMove_2, SIGNAL(triggered()),this, SLOT(moveItemContext()));
     connect(ui->actionDelete_2,SIGNAL(triggered()),this, SLOT(deleteItem()));
     connect(ui->actionGrid_2, SIGNAL(triggered()),this, SLOT(gridContext()));
-    connect(ui->actionLine_2,SIGNAL(triggered()),this, SLOT(insertLineContext()));
+    //connect(ui->actionLine_2,SIGNAL(triggered()),this, SLOT(insertLineContext()));
 //-------TOOLS---------------------------------------------------------------------------------
     connect(ui->actionVisible_EditToolbar,SIGNAL(triggered()),this, SLOT(visible_Toolbars()));
     connect(ui->actionVisible_TextToolbar,SIGNAL(triggered()),this, SLOT(visible_Toolbars()));
@@ -172,7 +172,7 @@ void MainWindow::createActions()            //propojení signálů a slotů pro 
 //---------------------------------------------------------------------------------------------
 //
     connect(ui->actionMove, SIGNAL(triggered()),this, SLOT(moveItem()));
-    connect(ui->actionLine,SIGNAL(triggered()),this, SLOT(insertLine()));
+    //connect(ui->actionLine,SIGNAL(triggered()),this, SLOT(insertLine()));
     connect(ui->actionDelete,SIGNAL(triggered()),this, SLOT(deleteItem()));
     connect(ui->actionGrid, SIGNAL(triggered()),this, SLOT(grid()));
     connect(ui->actionInsert,SIGNAL(triggered()),this, SLOT(insertItem()));
@@ -291,7 +291,7 @@ void MainWindow::itemSelected(QGraphicsItem *item)
     ui->actionUnderline->setChecked(font.underline());
 }
 
-void MainWindow::insertLine()
+/*void MainWindow::insertLine()
 {
     if(ui->actionLine->isChecked()){
          sceneArea->setMode(Scene::InsertLine);
@@ -302,9 +302,9 @@ void MainWindow::insertLine()
         sceneArea->setMode(Scene::Mode(-1));
         ui->actionLine_2->setChecked(false);
     }
-}
+}*/
 
-void MainWindow::insertLineContext()
+/*void MainWindow::insertLineContext()
 {
     if(ui->actionLine_2->isChecked()){                  //propojení akce v kontextovém menu s toolbarem
         ui->actionLine->setChecked(true);
@@ -312,7 +312,7 @@ void MainWindow::insertLineContext()
         ui->actionLine->setChecked(false);
     }
     insertLine();
-}
+}*/
 
 void MainWindow::deleteItem()
 {
@@ -333,7 +333,6 @@ void MainWindow::itemInserted(LibStructure *item)
     ui->actionInsert->setChecked(false);
     ui->actionMove->setChecked(true);
     ui->actionMove_2->setChecked(true);
-    ui->actionLine->setChecked(false);
 }
 
 void MainWindow::moveItem()
@@ -342,8 +341,6 @@ void MainWindow::moveItem()
     if(ui->actionMove->isChecked()){
         sceneArea->setMode(Scene::MoveItem);
         ui->actionMove_2->setChecked(true);
-        ui->actionLine->setChecked(false);
-        ui->actionLine_2->setChecked(false);
     }else{
         sceneArea->setMode(Scene::Mode(-1));
         ui->actionMove_2->setChecked(false);

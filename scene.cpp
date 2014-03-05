@@ -2,14 +2,11 @@
 
 #include "scene.h"
 #include "mainwindow.h"
-#include "line.h"
-
 
 Scene::Scene(QMenu *itemMenu, QObject *parent): QGraphicsScene(parent)
 {
     myItemMenu = itemMenu;
     myMode = MoveItem;
-    //myItemType = Item::Basic;
     line = 0;
     textItem = 0;
 }
@@ -30,10 +27,6 @@ void Scene::setMode(Mode mode)
     myMode = mode;
 }
 
-/*void Scene::setItemType(Item::ItemType type)
-{
-    myItemType = type;
-}*/
 void Scene::editorLostFocus(TextItem *item)
 {
     QTextCursor cursor = item->textCursor();
@@ -62,11 +55,11 @@ void Scene::mousePressEvent(QGraphicsSceneMouseEvent *mouseEvent)
             item->setPos(location);           //umístí item na pozici myši
             emit itemInserted(item);
             break;
-        case InsertLine:
+        /*case InsertLine:
             line = new QGraphicsLineItem(QLineF(mouseEvent->scenePos(),mouseEvent->scenePos()));
             line->setPen(QPen(Qt::black, 2));
             addItem(line);
-            break;
+            break;*/
         case InsertText:
             textItem = new TextItem();
             textItem->setFont(myFont);
@@ -91,37 +84,6 @@ void Scene::mouseMoveEvent(QGraphicsSceneMouseEvent *mouseEvent)
     } else if (myMode == MoveItem) {
         QGraphicsScene::mouseMoveEvent(mouseEvent);
     }
-}
-
-void Scene::mouseReleaseEvent(QGraphicsSceneMouseEvent *mouseEvent)
-{
-    /*if (line != 0 && myMode == InsertLine) {
-        QList<QGraphicsItem *> startItems = items(line->line().p1());
-        if (startItems.count() && startItems.first() == line)
-            startItems.removeFirst();
-        QList<QGraphicsItem *> endItems = items(line->line().p2());
-        if (endItems.count() && endItems.first() == line)
-            endItems.removeFirst();
-
-        removeItem(line);
-        delete line;
-
-        if (startItems.count() > 0 && endItems.count() > 0 && startItems.first()->type() == Item::Type &&
-            endItems.first()->type() == Item::Type && startItems.first() != endItems.first()) {
-            Item *startItem = qgraphicsitem_cast<Item *>(startItems.first());
-            Item *endItem = qgraphicsitem_cast<Item *>(endItems.first());
-            Line *line = new Line(startItem, endItem);
-            startItem->addLine(line);
-            endItem->addLine(line);
-            line->setZValue(-1000.0);
-            addItem(line);
-            line->updatePosition();
-        //}
-    }
-    line = 0;*/
-
-    QGraphicsScene::mouseReleaseEvent(mouseEvent);
-
 }
 
 bool Scene::isItemChange(int type)

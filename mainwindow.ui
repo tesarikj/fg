@@ -468,7 +468,6 @@
     <bool>false</bool>
    </attribute>
    <addaction name="actionMove"/>
-   <addaction name="actionLine"/>
    <addaction name="actionInsert"/>
    <addaction name="actionDelete"/>
    <addaction name="actionGrid"/>

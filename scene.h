@@ -2,7 +2,6 @@
 #define SCENE_H
 
 #include <QGraphicsScene>
-//#include "item.h"
 #include "libstructure.h"
 #include "textitem.h"
 
@@ -27,7 +26,6 @@
 
  public slots:
      void setMode(Mode mode);
-     //void setItemType(Item::ItemType type);
      void editorLostFocus(TextItem *item);
 
  signals:
@@ -38,17 +36,13 @@
  protected:
      void mousePressEvent(QGraphicsSceneMouseEvent *mouseEvent);
      void mouseMoveEvent(QGraphicsSceneMouseEvent *mouseEvent);
-     void mouseReleaseEvent(QGraphicsSceneMouseEvent *mouseEvent);
 
  private:
      bool isItemChange(int type);
 
      QPointF location;
-     //Item::ItemType myItemType;
      QMenu *myItemMenu;
      Mode myMode;
-     bool leftButtonDown;
-     QPointF startPoint;
      QGraphicsLineItem *line;
      QFont myFont;
      TextItem *textItem;

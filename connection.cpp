@@ -76,7 +76,7 @@ void Connection::updatePath()
     QPainterPath p;
     p.moveTo(pos1);             //umístí Painter do místa portu1
 
-    if((point.x()<pos1.x()+10) && point.x()>pos1.x()-10)
+   // if((point.x()<pos1.x()+10) && point.x()>pos1.x()-10)
 
     /*QPointF point1;
     point1.setX(point.x());
