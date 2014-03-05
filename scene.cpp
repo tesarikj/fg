@@ -7,7 +7,7 @@ Scene::Scene(QMenu *itemMenu, QObject *parent): QGraphicsScene(parent)
 {
     myItemMenu = itemMenu;
     myMode = MoveItem;
-    line = 0;
+    //line = 0;
     textItem = 0;
 }
 
@@ -78,10 +78,7 @@ void Scene::mousePressEvent(QGraphicsSceneMouseEvent *mouseEvent)
 
 void Scene::mouseMoveEvent(QGraphicsSceneMouseEvent *mouseEvent)
 {
-    if (myMode == InsertLine && line != 0) {
-        QLineF newLine(line->line().p1(), mouseEvent->scenePos());
-        line->setLine(newLine);
-    } else if (myMode == MoveItem) {
+     if (myMode == MoveItem) {
         QGraphicsScene::mouseMoveEvent(mouseEvent);
     }
 }
