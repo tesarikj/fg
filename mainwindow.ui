@@ -581,21 +581,6 @@
     <string>Ctrl+U</string>
    </property>
   </action>
-  <action name="actionLine">
-   <property name="checkable">
-    <bool>true</bool>
-   </property>
-   <property name="icon">
-    <iconset resource="fg01.qrc">
-     <normaloff>:/images/linepointer.png</normaloff>:/images/linepointer.png</iconset>
-   </property>
-   <property name="text">
-    <string>Line</string>
-   </property>
-   <property name="statusTip">
-    <string>Insert line</string>
-   </property>
-  </action>
   <action name="actionInsert">
    <property name="checkable">
     <bool>true</bool>
