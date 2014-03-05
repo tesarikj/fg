@@ -43,7 +43,7 @@
      QPointF location;
      QMenu *myItemMenu;
      Mode myMode;
-     QGraphicsLineItem *line;
+     //QGraphicsLineItem *line;
      QFont myFont;
      TextItem *textItem;
      LibStructure item;
